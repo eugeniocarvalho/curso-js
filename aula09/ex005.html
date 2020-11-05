@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,62 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Iniciando estudos DOM</h1>
   <p>Aqui vai o resultado</p>
   <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
-  <div>Clique em mim</div>
+  <div id="msg">Clique em mim</div>
+  <br>
+  <div name="msg2" class="msg2">Clica em mim</div>
+  <br>
 
   <script>
-    
+    //adiciona o texto no documento
+    window.document.write('Olá, mundo <br> <br>')
+    //mostra o charset do documento-- é uma config da pagina
+    window.document.write(window.document.charset)
+
+    // mostra  a url atual
+    window.document.write(window.document.URL)
+
+    //quebrando a linha
+    window.document.write('<br> <br>')
+
+    //pegando paragrafos da pagina
+    const p1 = window.document.getElementsByTagName('p')[0]
+    const p2 = window.document.getElementsByTagName('p')[1]
+
+    //escrevento o texto que ta dentro do p
+    window.document.write('Parágrafo 1 reescrito com innerText: ' + p1.innerText + '<br>')
+    window.document.write('Parágrafo 2 reescrito com innerText: ' + p2.innerText + '<br> <br>')
+
+    //mudando propriedade do paragrafo 1
+    p1.style.color = 'red'
+
+    //pegando a tag e seus filhos
+    window.document.write('Paragrafo 2 reescrito com innerHTML: ' + p2.innerHTML + '<br>')
+
+    //selecionando pelo ID
+    d = window.document.getElementById('msg')
+
+    d.style.background = 'coral'
+
+    //selecionando pelo nome
+    const d2 = window.document.getElementsByName('msg2')[0]
+
+    d2.style.background = 'deeppink'
+
+    //selecionando por seletor e id
+    d3 = window.document.querySelector('div#msg')
+
+    d3.style.color = 'black'
+
+    //selecionando por seletor e classe
+    d4 = window.document.querySelector('div.msg2')
+
+    d4.style.color = 'yellow'
   </script>
 </body>
+
 </html>
