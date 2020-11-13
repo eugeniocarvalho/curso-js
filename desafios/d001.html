@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio das mensagens</title>
+
+  <style>
+    button {
+      height: 40px;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Desafio das mensagens</h1>
+  <button class="btn">Botão 1</button>
+  <button class="btn">Botão 2</button>
+  <button class="btn">Botão 3</button>
+
+  <script>
+    const btns = document.getElementsByClassName('btn')
+
+    btns[0].addEventListener('click', clicou1)
+    btns[1].addEventListener('click', clicou2)
+    btns[2].addEventListener('click', clicou3)
+    
+    function clicou1() {
+      window.alert(`Você clicou no 1º botão`)
+    }
+    
+    
+    function clicou2() {
+      window.alert(`Você clicou no 2º botão`)
+    }
+    
+    
+    function clicou3() {
+      window.alert(`Você clicou no 3º botão`)
+    }
+  </script>
+</body>
+
+</html>
