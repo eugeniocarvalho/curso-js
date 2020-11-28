@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de medidas</title>
+</head>
+
+<body class="body">
+  <h1>Conversor de Medidas</h1>
+
+  <button onclick="converter()">Converter</button>
+  <section id='resposta'>
+    Clique no botão acima para iniciar
+  </section>
+
+  <script>
+    function converter() {
+      const distancia = Number(window.prompt('Digite uma distãncia em metros(m)'))
+      var res = window.document.querySelector('section#resposta')
+
+      res.innerHTML += `<p>${(distancia / 1000).toFixed(3)} quilômetros (Km)</p>`
+      res.innerHTML += `<p>${(distancia / 100).toFixed(3)} hectômetros (Hm)</p>`
+      res.innerHTML += `<p>${(distancia / 10).toFixed(3)} decâmetros (Dam)</p>`
+      res.innerHTML += `<p>${(distancia / 0.1).toFixed(2)} decímetros (dm)</p>`
+      res.innerHTML += `<p>${(distancia / 0.01).toFixed(1)} centrímetros (cm)</p>`
+      res.innerHTML += `<p>${(distancia / 0.001)} milímetros (mm)</p>`
+
+
+
+    }
+  </script>
+</body>
+
+</html>
