@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nacionalidade</title>
+
+  <style>
+    body {
+      margin: 8rem auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    button {
+      background-color: rgb(0, 110, 255);
+      color: white;
+      padding: .2rem .4rem;
+      border: none;
+      border-radius: 1rem;
+      margin: 1rem 1rem;
+      height: 1.8rem;
+      transition: .5s;
+    }
+
+    button:hover {
+      background-color: rgb(62, 144, 252);
+    }
+
+    #res {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Nacionalidade</h1>
+    <p>Qual país você nasceu?</p>
+    <input type="text">
+    <button onclick="nacionalidade()">ENVIAR</button>
+
+    <div id="res">
+
+    </div>
+  </div>
+
+  <script>
+    function nacionalidade() {
+      const nascimento = document.querySelector('input').value
+      var res = document.querySelector('div#res')
+
+      if (nascimento === 'Brasil' || nascimento === 'Brazil')
+        res.innerHTML = '<p>Você é <strong>brasileiro</strong>!</p>'
+      else
+        res.innerHTML = '<p>Você é <strong>estrangeiro</strong>!</p>'
+    }
+  </script>
+</body>
+
+</html>
