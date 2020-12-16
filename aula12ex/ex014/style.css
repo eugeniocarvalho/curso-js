@@ -9,18 +9,19 @@ header {
 }
 
 #msg {
-  margin: 12px;
+  margin: 0.6875rem;
 }
 
 section {
   text-align: center;
   background-color: white;
   border-radius: 10px;
-  padding: 15px;
-  width: 500px;
+  padding: 0.938rem;
+  width: 80%;
   margin: auto;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
 }
+
 
 footer {
   color: white;
@@ -28,5 +29,11 @@ footer {
   font-style: italic;
   bottom: 0;
   position: fixed;
-  width: 100%;
+  width: -webkit-fill-available;
+}
+
+@media (min-width: 700px) {
+  section {
+    width: 500px;
+  }
 }
