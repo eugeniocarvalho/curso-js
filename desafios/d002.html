@@ -4,10 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desafio boas-vindas</title>
+  <style>
+    body {
+      text-align: center;
+      font: 12pt Arial;
+    }
+
+    button {
+      background-color: violet;
+      border: none;
+      border-radius: .2rem;
+      padding: .8rem 1.2rem;
+      cursor: pointer;
+      transition: .2s;
+      font-size: 14pt;
+      display: block;
+      margin: auto;
+      margin-bottom: 1rem;
+    }
+
+    button:hover {
+      background-color: rgb(196, 61, 196);
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+
+  </style>
 </head>
 <body>
   <h1>Boas-vindas</h1>
   <button id="btn">Inicie o desafio</button>
+
+  <a href="../index.html">Voltar</a>
 
   <script>
     const botao = document.getElementById('btn')

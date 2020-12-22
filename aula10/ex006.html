@@ -7,14 +7,34 @@
   <title>Eventos DOM</title>
 
   <style>
-    div#area {
+    body {
+      text-align: center;
       font: normal 20pt Arial;
+    }
+
+    div#area {
       background-color: rgb(63, 214, 63);
       color: white;
       width: 200px;
       height: 200px;
       line-height: 200px;
       text-align: center;
+      margin: auto;
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      padding-top: 2rem;
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
     }
   </style>
 </head>
@@ -24,6 +44,8 @@
   <div id="area">
     Interaja...
   </div>
+
+  <a href="../index.html">Voltar</a>
 
   <script>
     const a = document.getElementById('area')

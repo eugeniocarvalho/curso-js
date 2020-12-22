@@ -11,6 +11,21 @@
       background: rgb(16, 43, 83);
       color: white;
       font: normal 18pt Arial;
+      text-align: center;
+    }
+
+    a {
+      margin-top: 3rem;
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
     }
   </style>
 </head>
@@ -48,7 +63,7 @@
     p1.style.color = 'red'
 
     //pegando a tag e seus filhos
-    window.document.write('Paragrafo 2 reescrito com innerHTML: ' + p2.innerHTML + '<br>')
+    window.document.write('Paragrafo 2 reescrito com innerHTML: ' + p2.innerHTML + '<br><br>')
 
     //selecionando pelo ID
     d = window.document.getElementById('msg')
@@ -69,6 +84,8 @@
     d4 = window.document.querySelector('div.msg2')
 
     d4.style.color = 'yellow'
+
+    window.document.write('<a href="../index.html">Voltar</a>')
   </script>
 </body>
 
