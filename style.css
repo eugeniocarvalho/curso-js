@@ -29,8 +29,12 @@ li {
   text-align: left;
   padding-left: auto;
   padding-right: auto;
+  transition: .2s;
 }
 
+li:hover {
+  transform: scale(1.1);
+}
 
 a {
   text-decoration: none;
@@ -40,4 +44,5 @@ a {
 
 a:hover {
   color: white;
+  transform: scale(1.4);
 }
