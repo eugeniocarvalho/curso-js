@@ -4,23 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título da página</title>
+  <title>Tabuada</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="/aula12ex/ex014/img/tempo.png" type="image/x-icon">
 </head>
 
 <body>
   <header>
-    <h1>Título</h1>
+    <h1>Tabuada</h1>
   </header>
 
   <section>
-    <div id="msg">
-      <p>Aqui vai aparecer a mensagem</p>
+    <div>
+      <form>
+        <label for="Número"></label>
+        <input id="multiplicador" type="number">
+        <input type="button" value="Gerar Tabuada" onclick="gerarTabuada()">
+      </form>
     </div>
 
-    <div id="foto">
-      <img id="imagem" src="#" alt="Foto horario">
+    <div class="tabuada">
+      <textarea name="resultado" id="res" cols="20" rows="11"></textarea>
     </div>
   </section>
 

@@ -24,6 +24,25 @@ section {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
 }
 
+.tabuada {
+  text-align: start;
+  margin-left: 4rem;
+}
+
+input[type=button] {
+  border: none;
+  background-color: coral;
+  padding: .4rem .6rem;
+  border-radius: .2rem;
+  transition: .2s;
+  outline: none;
+}
+
+input[type=button]:hover {
+  background-color: rgb(211, 84, 37);
+  color: white;
+}
+
 a {
   text-decoration: none;
   background-color: rgb(61, 145, 255);
