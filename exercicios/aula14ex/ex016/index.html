@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt0br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super contador</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="/aula12ex/ex014/img/tempo.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Vamos contar</h1>
+  </header>
+
+  <section>
+    <div>
+      <form method="GET">
+        <div>
+          <label>Início:</label>
+          <input type="number" id="inicio" required>
+        </div>
+
+        <div>
+          <label >Fim:</label>
+          <input type="number" id="fim" style="margin-left: 1rem;" required>
+        </div>
+
+        <div>
+          <label>Passo:</label>
+          <input type="number" id="passo" style="margin-left: -.3rem;" required>
+        </div>
+
+        <input type="button" value="CONTAR" onclick="contar()">
+      </form>
+    </div>
+
+    <div id="res">
+      <p>Preparando a contagem...</p>
+    </div>
+  </section>
+
+  <a href="../../../index.html">Voltar</a>
+
+  <footer>
+    <p>&copy; CursoEmVideo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
