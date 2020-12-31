@@ -24,9 +24,10 @@ section {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
 }
 
-.tabuada {
+select {
   text-align: start;
   margin-left: 4rem;
+  margin-top: 2rem;
 }
 
 input[type=button] {
@@ -41,6 +42,10 @@ input[type=button] {
 input[type=button]:hover {
   background-color: rgb(211, 84, 37);
   color: white;
+}
+
+#res {
+  margin-bottom: 3rem;
 }
 
 a {

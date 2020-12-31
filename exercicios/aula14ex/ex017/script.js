@@ -1,14 +1,20 @@
 function gerarTabuada() {
-  const multiplicador = Number.parseInt(document.getElementById('multiplicador').value)
-  const res = document.querySelector('#res')
+  const multiplicador = document.getElementById('multiplicador').value
+  const res = document.querySelector('#seltab')
 
-  if (multiplicador) {
-    res.value = ''
-    for (let i = 0; i <= 10; i++)
-      res.value += `${multiplicador} x ${i} = ${multiplicador * i}\n`
+  if (multiplicador.length !== 0) {
+    res.setAttribute("style", "display: block;")
+    res.innerHTML = ''
+    for (let i = 0; i <= 10; i++) {
+      let item = document.createElement('option')
+      
+      item.text =`${multiplicador} x ${i} = ${multiplicador * i}`
+
+      res.appendChild(item)
+    }
   }
   else {
+    res.setAttribute("style", "display: none;")
     window.alert('Insira um número para gerar a tabuada!')
-    res.value = ''
   }
 }
