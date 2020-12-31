@@ -1,29 +1,32 @@
 function contar() {
-  let inicial = Number.parseInt(document.getElementById('inicio').value)
-  const final = Number.parseInt(document.getElementById('fim').value)
-  let passo = Number.parseInt(document.getElementById('passo').value)
-  let res = document.querySelector('#res')
+  const  formInicial = document.getElementById('inicio').value
+  const  formFinal = document.getElementById('fim').value
+  const  formPasso = document.getElementById('passo').value
+  const formRres = document.querySelector('#res')
 
-  console.log(inicial)
+  if (formInicial.length !== 0 && formFinal.length !== 0) {
 
-  if (inicial || final) {
-    if (!passo) {
+    let inicial = Number(formInicial)
+    let final = Number(formFinal)
+    let passo = Number(formPasso)
+
+    if (formPasso.length === 0 || passo <= 0) {
       passo = 1
       window.alert('Passo Inválido! Considerado passo = 1')
     }
 
-    if (inicial < final) {
-      res.innerHTML = '<p>Contando:</p>'
-      res.innerHTML += '<p>'
+    res.innerHTML = '<p style="text-align: start; margin-left: 2rem;">Contando:</p>'
+    res.innerHTML += '<p>'
 
+    if (inicial < final)
       for (inicial; inicial <= final; inicial += passo)
         res.innerHTML += `${inicial} &#x1F449; `
-
-      res.innerHTML += '&#x1F3C1;</p>'
-    }
     else
-      res.innerHTML = '<p>[ERROR]! Início maior que o fim!</p>'
+      for (inicial; inicial >= final; inicial -= passo)
+        res.innerHTML += `${inicial} &#x1F449; `
+
+    res.innerHTML += '&#x1F3C1;</p>'
   }
   else
-    res.innerHTML = '<p>Preparando a contagem...</p>'
+    res.innerHTML = '<p>Faltam dados..</p>'
 }
