@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt0br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisador de Números</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="/aula12ex/ex014/img/tempo.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Analisador de números</h1>
+  </header>
+
+  <section>
+    <div>
+      <form>
+        <div>
+          <label>Número (entre 0 e 100): </label>
+          <input type="number" name="valor" id="valor">
+          <input type="button" value="Adicionar" onclick="adicionaNumero()">
+        </div>
+      </form>
+    </div>
+    <div class="selecao">
+      <select style="display: none;" name="resultado" id="res" size="5"></select>
+    </div>
+    <p><input type="button" value="FInalizar" id="finalizar" onclick="finalizar()"></p>
+    <div id="mostrarResultado"></div>
+    <div>
+    </div>
+  </section>
+
+  <a href="../../../index.html">Voltar</a>
+
+  <footer>
+    <p>&copy; CursoEmVideo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
