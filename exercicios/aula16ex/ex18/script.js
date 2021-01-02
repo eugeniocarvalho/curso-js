@@ -1,20 +1,20 @@
 let valores = []
 res = document.getElementById('res')
 resultado = document.getElementById('mostrarResultado')
+let resetaValor = document.querySelector('#valor')
 
 function adicionaNumero() {
-  const formValor = document.getElementById('valor').value
+  let formValor = document.getElementById('valor').value
   const valor = Number(formValor)
 
   if (formValor.length !== 0)
-  if (valor >= 0 && valor <= 100) {
+  if (valor >= 1 && valor <= 100) {
       res.setAttribute("style", "display: block;")
 
       if (valores.indexOf(valor) === -1) {
         let item = document.createElement('option')
         
         resultado.innerHTML = ''
-
         item.text += `Adicionado número ${valor}`
         valores.push(valor)
         res.appendChild(item)
@@ -26,13 +26,13 @@ function adicionaNumero() {
       window.alert('Insira um número entre 0 e 100!')
   else
     window.alert('Insira um número!')
+  
+  resetaValor.value = ''
+  resetaValor.focus()
 }
 
 function finalizar() {
-  const formValor = document.getElementById('valor').value
-  
-
-  if (formValor.length !== 0) {
+  if (valores.length > 0) {
     const maior = Math.max(...valores)
     const menor = Math.min(...valores)
     const soma = valores.reduce((r, i) => r + i)
@@ -45,4 +45,6 @@ function finalizar() {
   }
   else
     window.alert('Insira um número antes!')
+
+  formValor = ''
 }
