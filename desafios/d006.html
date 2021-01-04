@@ -19,6 +19,7 @@
       border-radius: .3rem;
       transition: .2s;
       cursor: pointer;
+      margin-bottom: 1.2rem;
     }
 
     button:hover {
@@ -28,6 +29,11 @@
     #res {
       font-size: 14pt;
       margin-top: 2rem;
+      border: 1px solid black;
+      border-radius: .5rem;
+      width: 85%;
+      margin: auto;
+      box-shadow: 1rem 1rem 1.5rem rgba(77, 77, 77, 0.466);
     }
 
     a {
@@ -56,6 +62,8 @@
     <p><u>Clique no botão acima para iniciar.</u></p>
   </div>
 
+  <p style="margin-top: 2rem;"><a href="../../../index.html">Voltar</a></p>
+
   <script>
     function converter() {
       const windowGraus = Number(window.prompt('Digite uma temperatura em ºC(Calsius)'))
@@ -67,8 +75,7 @@
 
         res.innerHTML = `<h2>A temperatura ${windowGraus}ºC, corresponde a...</h2>
         <p>${kelvin.toFixed(2)}ºK (Kelvin)</p>
-        <p>${fahrenheit.toFixed(2)}ºF (Fahrenheit)</p>
-        <p><a href="../../../index.html">Voltar</a></p>`
+        <p>${fahrenheit.toFixed(2)}ºF (Fahrenheit)</p>`
       }
       else
         res.innerHTML = 'Digite um valor para converter!'
