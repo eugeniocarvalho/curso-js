@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Temperaturas</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    button {
+      padding: .4rem .6rem;
+      border: none;
+      background-color: rgb(77, 77, 77);
+      color: white;
+      border-radius: .3rem;
+      transition: .2s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(128, 128, 128);
+    }
+
+    #res {
+      font-size: 14pt;
+      margin-top: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Conversor de Temperaturas</h1>
+
+    <button onclick="converter()">Converter</button>
+
+  </div>
+  <div id="res">
+    <p><u>Clique no botão acima para iniciar.</u></p>
+  </div>
+
+  <script>
+    function converter() {
+      const windowGraus = Number(window.prompt('Digite uma temperatura em ºC(Calsius)'))
+      let res = document.querySelector('#res')
+
+      if (windowGraus) {
+        const kelvin = windowGraus + 273
+        const fahrenheit = 1.8 * windowGraus + 32
+
+        res.innerHTML = `<h2>A temperatura ${windowGraus}ºC, corresponde a...</h2>
+        <p>${kelvin.toFixed(2)}ºK (Kelvin)</p>
+        <p>${fahrenheit.toFixed(2)}ºF (Fahrenheit)</p>
+        <p><a href="../../../index.html">Voltar</a></p>`
+      }
+      else
+        res.innerHTML = 'Digite um valor para converter!'
+    }
+  </script>
+</body>
+
+</html>
