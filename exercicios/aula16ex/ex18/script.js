@@ -15,9 +15,9 @@ function adicionaNumero() {
         let item = document.createElement('option')
         
         resultado.innerHTML = ''
-        item.text += `Adicionado número ${valor}`
+        item.text 
         valores.push(valor)
-        res.appendChild(item)
+        res.value += `Adicionado número ${valor}\n`
       }
       else
         window.alert('Número já adicionado!')
