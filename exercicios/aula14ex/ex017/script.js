@@ -1,16 +1,13 @@
 function gerarTabuada() {
   const multiplicador = document.getElementById('multiplicador').value
-  const res = document.querySelector('#seltab')
+  const res = document.querySelector('#tabuada')
 
   if (multiplicador.length !== 0) {
-    res.setAttribute("style", "display: block;")
-    res.innerHTML = ''
-    for (let i = 0; i <= 10; i++) {
-      let item = document.createElement('option')
-      
-      item.text =`${multiplicador} x ${i} = ${multiplicador * i}`
+    res.setAttribute("style", "display: inline;")
+    res.value = ''
 
-      res.appendChild(item)
+    for (let i = 0; i <= 10; i++) {
+      res.value += `${multiplicador} x ${i} = ${multiplicador * i}\n`
     }
   }
   else {
