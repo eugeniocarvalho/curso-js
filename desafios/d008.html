@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de desconto</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    button {
+      padding: .5rem 1.2rem;
+      font-size: 12pt;
+      font-weight: bold;
+      color: white;
+      background-color: teal;
+      box-shadow: .1rem .1rem 1.3rem teal;
+      cursor: pointer;
+      transition: .2s;
+      border: none;
+      margin: 1rem;
+    }
+
+    button:hover {
+      background-color: rgb(0, 184, 184);
+      box-shadow: .1rem .1rem 1rem  rgb(0, 184, 184);
+    }
+
+    a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Calcular Desconto</h1>
+    <button onclick="descontar()">Desconto de 10%</button>
+  </div>
+
+  <div id="resultado">
+    <p>Clique no botão acima para calcular.</p>
+  </div>
+
+  <p style="margin-top: 2rem;"><a href="../../../index.html">Voltar</a></p>
+
+  <script>
+    function descontar() {
+      const nomeProduto = window.prompt('Qual o nome do produto que você está comprando?')
+      const precoProduto = Number(window.prompt(`Qual preço do(a) ${nomeProduto}?`))
+      res = document.querySelector('#resultado')
+
+      if (precoProduto) {
+        res.innerHTML = `<h2>Calculando desconto de 10% para ${nomeProduto}</h2>`
+
+        res.innerHTML += `<p>O preço original era <b>R$ ${precoProduto.toFixed(2)}</b></p>
+        <p>Você acaba de ganhar <b>R$ ${(precoProduto * .10).toFixed(2)}</b> de desconto <b>(-10%)</b></p>
+        <p>No fim, você vai pagar <b>R$ ${(precoProduto * .9).toFixed(2)}</b> no produto ${nomeProduto}!</p>`
+      }
+      else
+        window.alert('Digite um preço')
+    }
+  </script>
+</body>
+
+</html>
