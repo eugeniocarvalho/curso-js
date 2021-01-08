@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reajuste Salarial</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    button {
+      padding: .5rem 1.2rem;
+      font-size: 12pt;
+      font-weight: bold;
+      color: white;
+      background-color: purple;
+      box-shadow: .1rem .1rem 1.3rem rgba(0, 0, 0, 0.452);
+      cursor: pointer;
+      transition: .2s;
+      border: none;
+      margin: 1rem;
+    }
+
+    button:hover {
+      background-color: rgb(132, 0, 184);
+    }
+
+    a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="reajustar()">Reajustar salário</button>
+  </div>
+
+  <div id="res">
+    <p>Clique no botão acima para iniciar.</p>
+  </div>
+
+  <p style="margin-top: 2rem;"><a href="../../../index.html">Voltar</a></p>
+
+  <script>
+    function reajustar() {
+      const formNome = window.prompt('Qual é o nome do funcionário')
+      const formSalario = Number(window.prompt(`Quanto é o salário do(a) ${formNome}?`))
+      const formReajuste = Number(window.prompt(`O salário de(a) ${formNome}? vai ser reajustado em qual porcentagem?`))
+
+      if (formNome && formSalario && formReajuste) {
+        const res = document.querySelector('#res')
+        const novoSalario = formSalario + (formSalario * formReajuste / 100)
+
+        res.innerHTML = `<h2><b>${formNome}</b> recebeu um aumento salarial!</h2>
+        <p>O salário atual era <b>R$${formSalario.toFixed(2)}</b></p>
+        <p>Com um aumento de ${formReajuste}%, o salário vai aumentar R$${formSalario * formReajuste / 100} no próximo mês.</p>
+        <p>E a partir daí, ${formNome} vai passar ganhar <b>R$${novoSalario.toFixed(2)}</b></p>`
+      }
+      else
+        window.alert('ERROR!! Informações faltando!')
+
+    }
+  </script>
+</body>
+
+</html>
