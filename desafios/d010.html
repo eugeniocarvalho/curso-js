@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórmula de Bhaskara</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center
+    }
+
+    #res {
+      font-size: 16pt;
+    }
+
+    .botao {
+      margin-top: 2rem;
+    }
+
+    .botao a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    .botao a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+
+    button {
+      padding: .7rem 1rem;
+      background-color: rgb(33, 226, 42);
+      color: white;
+      transition: .2s;
+      border: none;
+      border-radius: 5rem;
+      font-size: 14pt;
+      outline: none;
+      cursor: pointer;
+      box-shadow: .1rem .1rem .8rem rgb(33, 226, 42);
+    }
+
+    button:hover {
+      background-color: rgb(25, 199, 54);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Resolvendo Bhaskara</h1>
+
+    <button onclick="calculate()">Calcular</button>
+
+    <p>Considerando uma equação no formato <b>a</b>x<sup>2</sup> + <b>b</b>x + <b>c</b> = 0, aperte o botão acima para
+      calcular o valode de Δ </p>
+  </div>
+
+  <div id="res">
+    <p>Aperte em calcular para colocar os valores.</p>
+  </div>
+
+  <p class="botao"><a href="./../../index.html">Voltar</a></p>
+
+  <script>
+    function calculate() {
+      const valueA = Number(window.prompt(`Qual é o valor de a?(≠ 0)`))
+      const valueB = Number(window.prompt('Qual é o valor de b?'))
+      const valueC = Number(window.prompt('Qual é o valor de c?'))
+      res = document.querySelector('#res')
+      res.innerHTML = ''
+
+      if (valueA !== 0) {
+        const delta = Math.pow(valueB, 2) - (4 * valueA * valueC)
+        let x1 = (-valueB + Math.sqrt(delta)) / (2 * valueA)
+        let x2 = (-valueB - Math.sqrt(delta)) / (2 * valueA)
+
+        res.innerHTML = `<p>A equação atual é <b>${valueA}x<sup>2</sup> + ${valueB}x ${(valueC < 0 ? `- ${valueC * -1}` : `+ ${valueC}`)} = 0</b></p>
+    <p>O cálculo realizado será <b>Δ = ${valueB}<sup>2</sup> - 4 * ${valueA} * ${valueC}</b></p>
+    <p> O valor calculado foi <b>${delta}</b></p>
+    <p>Valores de x<sub>1</sub> e x<sub>2</sub> são: <br>x<sub>1</sub>: <b>${x1.toFixed(4)}</b> x<sub>2</sub>: <b>${x2.toFixed(4)}</b></p>`
+      }
+    }
+  </script>
+</body>
+
+</html>
