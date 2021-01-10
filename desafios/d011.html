@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ano bissexto</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center
+    }
+
+    #res {
+      font-size: 16pt;
+    }
+
+    #isLeap {
+      background-color: rgba(172, 255, 47, 0.562);
+    }
+
+    #isNotLeap {
+      background-color: rgba(255, 0, 0, 0.568);
+    }
+
+    .botao {
+      margin-top: 2rem;
+    }
+
+    .botao a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    .botao a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+
+    button {
+      padding: .7rem 1rem;
+      background-color: rgb(33, 149, 226);
+      color: white;
+      transition: .2s;
+      border: none;
+      border-radius: .4rem;
+      font-size: 14pt;
+      outline: none;
+      cursor: pointer;
+      box-shadow: .1rem .1rem .8rem rgb(33, 165, 226);
+    }
+
+    button:hover {
+      background-color: rgb(25, 86, 199);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Ano Bissexto</h1>
+    <button onclick="isLeap()">Verificar</button>
+  </div>
+
+  <div id="res">
+    <p>Informe um ano para saber se ele é bissexto.</p>
+  </div>
+
+  <p class="botao"><a href="./../../index.html">Voltar</a></p>
+
+
+  <script>
+    function isLeap() {
+      const promptYear = Number(prompt('Qual é o ano que você quer verificar?'))
+      let res = document.querySelector('#res')
+
+      if (promptYear)
+        if (promptYear % 4 === 0 && promptYear % 100 !== 0 || promptYear % 400 === 0)
+          res.innerHTML = `<p>O ano de ${promptYear} <b id="isLeap">é bissexto</b> ${String.fromCodePoint(0x2705)}</p>`
+        else
+          res.innerHTML = `<p>O ano de ${promptYear} <b id="isNotLeap">não é bissexto</b> ${String.fromCodePoint(0x274C)}</p>`
+      else
+        alert('ERROR!! Campo [ANO] vazio!')
+    }
+  </script>
+</body>
+
+</html>
