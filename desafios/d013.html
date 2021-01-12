@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Situação do aluno</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center
+    }
+
+    h1 {
+      font-size: 28pt;
+      text-shadow: .1rem .1rem .1rem rgba(0, 0, 0, 0.384);
+    }
+
+    #res {
+      margin-top: 2rem;
+      font-size: 16pt;
+    }
+
+    .botao {
+      margin-top: 2rem;
+    }
+
+    .botao a {
+      text-decoration: none;
+      background-color: rgb(61, 145, 255);
+      padding: .5rem 1.8rem;
+      border-radius: .5rem;
+      transition: .2s;
+    }
+
+    .botao a:hover {
+      background-color: rgb(0, 110, 255);
+      color: white;
+    }
+
+    button {
+      padding: .7rem 1rem;
+      background-color: rgb(191, 226, 33);
+      color: white;
+      transition: .2s;
+      border: none;
+      border-radius: .4rem;
+      font-size: 14pt;
+      outline: none;
+      cursor: pointer;
+      box-shadow: .1rem .1rem .8rem rgb(226, 213, 33);
+    }
+
+    button:hover {
+      background-color: rgb(199, 196, 25);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Situação do Aluno</h1>
+    <button onclick="calculate()">Calcular</button>
+  </div>
+
+  <div id="res">
+    <p>Clique no botão acima para informar as notas do aluno</p>
+  </div>
+
+  <script>
+    function calculate() {
+      const promptName = prompt('Qual é o nome do aluno?')
+      const promptgrade1 = Number(prompt(`Primeira nota de ${promptName}:`));
+      const promptgrade2 = Number(prompt(`Segunda nota de ${promptName}:`));
+
+      if (promptgrade1 && promptgrade2) {
+        const gradeAverage = (promptgrade1 + promptgrade2) / 2;
+        const res = document.querySelector('#res');
+
+        res.innerHTML = `Com as notas ${promptgrade1} e ${promptgrade2}, a <b>média é ${gradeAverage.toFixed(2)}</b>`
+
+        if (gradeAverage < 3)
+          res.innerHTML += '<p>Com a média abaixo de 3.0, o aluno está <b style="background-color: rgba(255, 0, 0, 0.466);">REPROVADO!</b></p>';
+        else
+          if (gradeAverage < 6)
+            res.innerHTML += '<p>Com a média entre 3.0 e 6.0, o aluno está <b style="background-color:rgba(255, 255, 0, 0.521);">RECUPERAÇÃO!</b></p>';
+          else
+            res.innerHTML += '<p>Com a média acima de 6.0, o aluno está <b style="background-color: rgba(0, 255, 85, 0.521);">APROVADO!</b></p>';
+      }
+      else
+        alert('[ERROR] Digite todas as notas!');
+    }
+  </script>
+</body>
+
+</html>
