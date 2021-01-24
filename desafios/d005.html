@@ -49,6 +49,8 @@
     Clique no botão acima para iniciar
   </section>
 
+  <p class="botao"><a href="../index.html">Voltar</a></p>
+
   <script>
     function converter() {
       const distancia = Number(window.prompt('Digite uma distãncia em metros(m)'))
@@ -60,8 +62,6 @@
       res.innerHTML += `<p>${(distancia / 0.1).toFixed(2)} decímetros (dm)</p>`
       res.innerHTML += `<p>${(distancia / 0.01).toFixed(1)} centrímetros (cm)</p>`
       res.innerHTML += `<p>${(distancia / 0.001)} milímetros (mm)</p>`
-
-      res.innerHTML +='<a href="../index.html">Voltar</a>'
     }
   </script>
 </body>
